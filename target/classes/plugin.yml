@@ -1,0 +1,5 @@
+name: PlayersInfos
+main: me.daniel.playersinfos.PlayersInfos
+version: 1.0
+description: Plugin que loga informaçoes dos players no painel
+author: Daniel
