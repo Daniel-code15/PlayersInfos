@@ -1,0 +1,75 @@
+# PlayersInfos
+# Por: SrNiix_
+
+
+# Mostrar logs no console
+show-console: true
+
+# Mostrar logs aos staffs com permissão playersinfos.staff
+show-staff: false
+
+
+# Habilitar Enviar dados a webhook no discord
+discord:
+    # Salvar chat no discord
+    logs-chat: false
+    chat-webhook: https://discord.com/api/webhooks/
+    
+    # Salvar Logs no discord
+    logs-infos: false
+    logs-webhook: https://discord.com/api/webhooks/
+
+
+# Variaveis do template
+
+# <player_ip> - IP do jogador; <region> - Geo-Localização do IP; <player> - Nick do jogador; <player_health> - Vida do jogador;
+# <player_coords> - Coordenadas do jogador; <player_world> - Mundo em que o jogador está; <player_gm> - Modo de jogo do player;
+# <player_uuid> - UUID do jogador; <player_lastplayed> - Ultima vez visto online; <player_hasOp> - Verifica se o jogador tem Op;
+# <whitelisted> - Verificar se o jogador está na lista branca;
+template:
+    webhook:
+        - "**IP: **<player_ip>"
+        - "**GEO-LOC: **<region>"
+        - " "
+        - "**Jogador:** <player>"
+        - "**Vida:** <player_health>"
+        - "**Coordenadas:** <player_coords>"
+        - "**Mundo:** <player_world>"
+        - "**UUID:** <player_uuid>"
+        - "**OP:** <player_hasOp>"
+    console:
+        - "&6===========&2[&3PlayersInfos&2]&6==========="
+        - "&4IP: &6<player_ip>"
+        - "&4Região: &6<region>"
+        - " "
+        - "&4Jogador: &6<player>"
+        - "&4Vida: &6<player_health>"
+        - "&4Coordenadas: &6<player_coords>"
+        - "&4Mundo: &6<player_world>"
+        - "&4Gamemode: &6<player_gm>"
+        - "&4UUID: &6<player_uuid>"
+        - "&4Visto em: &6<player_lastplayed>"
+        - "&4OP: &6<player_hasOp>"
+        - "&4Whitelisted: &6<whitelisted>"
+        - "&6===========&2[&3PlayersInfos&2]&6==========="
+    staff:
+        - " "
+        - "&b<player> entrou no servidor."
+        - " "
+        - "&eIP: &a<player_ip>"
+        - "&eGeo-Localização: &a<region>"
+        - "&eCoordenadas: &a<player_coords>"
+        - "&eMundo: &a<player_world>&a"
+        - "&eUUID: &2<player_uuid>"
+        - "&eOP: &6<player_hasOp>"
+        - " "
+# Variaveis region
+
+# <cidade> - Cidade; <regiao> - Estado; <pais> - País; <pais-sig> - Sigla do país -> Exemplo [Brasil] (BR)
+region:
+    template: "&7Cidade &6<cidade> &7Estado &6<estado> &f[&6<pais>&f(<pais-sig>)]"
+
+
+
+# NÃO EDITAR config-version!
+config-version: 2

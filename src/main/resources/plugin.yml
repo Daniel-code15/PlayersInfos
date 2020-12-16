@@ -3,3 +3,10 @@ main: me.daniel.playersinfos.PlayersInfos
 version: 1.0
 description: Plugin que loga informaçoes dos players no painel
 author: Daniel
+commands:
+    pinfos:
+permissions:
+    playersinfos.staff:
+        default: op
+    playersinfos.reload:
+        default: op

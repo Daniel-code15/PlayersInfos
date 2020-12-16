@@ -10,16 +10,24 @@ import java.nio.charset.Charset;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class JsonReader {
-
-private static String readAll(Reader rd) throws IOException {
+  private static String readAll(Reader rd) throws IOException {
     StringBuilder sb = new StringBuilder();
     int cp;
     while ((cp = rd.read()) != -1) {
       sb.append((char) cp);
     }
     return sb.toString();
+  }
+  
+  private static JSONObject readJsonFromString(String txt) throws IOException, ParseException {
+      JSONParser parse = new JSONParser();
+      JSONObject json = (JSONObject) parse.parse(txt);
+      
+      return json;
   }
 
   public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
